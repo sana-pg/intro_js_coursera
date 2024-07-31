@@ -15,6 +15,7 @@ function addTask() {
 
 function displayTasks() {
     taskList.innerHTML = "";
+    console.log(tasks)
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
         li.innerHTML = `<input type="checkbox" id="task-${index}" ${task.completed ? "checked" : ""}>
@@ -35,6 +36,12 @@ function clearCompletedTasks() {
         displayTasks();
 }
 
+function clearTasks() {
+        tasks = [];
+        displayTasks();
+}
+
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+clearBtn.addEventListener("click", clearTasks);
 displayTasks();
