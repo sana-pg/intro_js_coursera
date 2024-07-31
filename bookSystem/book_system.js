@@ -37,3 +37,10 @@ function clearInputs() {
     document.getElementById('bookDescription').value = '';
     document.getElementById('pagesNumber').value = '';
 }
+
+function deletebook() {
+    no = document.getElementById('deletebookNumber').value
+    books.splice(no-1, 1);
+    showbooks();
+
+}
